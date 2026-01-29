@@ -215,29 +215,31 @@
 .pub-list {
   display: flex;
   flex-direction: column;
-  gap: 50px; /* 年份区块之间的间距 */
+  gap: 50px;
   margin-top: 40px;
 }
 
-/* 年份区块 */
+/* 年份区块 (修改点：线条变细、颜色变浅) */
 .year-section {
   position: relative;
   padding: 30px 0 10px 0;
-  border-top: 3px solid #333; /* 上方粗线 */
-  border-bottom: 1px solid #ccc; /* 下方细线 */
+  /* 上横线：由 3px 黑色 改为 1.5px 浅灰色 */
+  border-top: 1.5px solid #d0d0d0; 
+  /* 下横线：由 1px 灰色 改为 1px 更浅的灰色 */
+  border-bottom: 1px solid #eaeaea; 
 }
 
-/* 右上角年份标签 */
+/* 右上角年份标签 (修改点：颜色变浅) */
 .year-label {
   position: absolute;
-  top: -18px; /* 上移压线 */
+  top: -16px; /* 稍微调整位置以适应细线 */
   right: 0;
-  background-color: #fff; /* 背景色遮挡线条 */
+  background-color: #fff;
   padding: 0 0 0 15px;
-  font-family: 'Noto Serif SC', serif; /* 保持与您网站字体一致 */
+  font-family: 'Noto Serif SC', serif;
   font-size: 24px;
-  font-weight: 800;
-  color: #333;
+  font-weight: 700; /* 稍微减小字重，看起来不那么黑 */
+  color: #a0a0a0;   /* 字体颜色改为浅灰色 */
   line-height: 1;
 }
 
@@ -247,26 +249,25 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 25px 0;
-  border-bottom: 1px dashed #eaeaea; /* 论文间虚线分隔 */
+  border-bottom: 1px dashed #f0f0f0; /* 论文间的分隔线也调得更浅 */
 }
 
-/* 每年最后一篇去掉底部分隔线 */
 .pub-item:last-child {
   border-bottom: none;
 }
 
 /* 左侧缩略图 */
 .pub-img {
-  flex: 0 0 160px; /* 固定宽度 */
+  flex: 0 0 160px;
   width: 160px;
   margin-right: 25px;
-  margin-top: 5px; /* 图片微调对齐 */
+  margin-top: 5px;
 }
 
 .pub-img img {
   width: 100%;
   border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 阴影也调淡一点 */
   transition: transform 0.3s ease;
   display: block;
 }
@@ -277,19 +278,19 @@
 .pub-title { 
   font-size: 17px; 
   font-weight: 700; 
-  color: #222; 
+  color: #444; /* 标题稍微淡一点的黑，不刺眼 */
   margin-bottom: 8px; 
   line-height: 1.5;
 }
 .pub-authors { 
   font-size: 15px; 
-  color: #555; 
+  color: #666; /* 作者颜色 */
   margin-bottom: 6px; 
   line-height: 1.5;
 }
 .pub-venue { 
   font-size: 14px; 
-  color: #888; 
+  color: #999; /* 期刊信息颜色变浅 */
   font-style: italic; 
   margin-bottom: 10px; 
 }
@@ -301,14 +302,14 @@
   align-items: center;
   padding: 3px 10px;
   font-size: 12px;
-  color: #333;
-  border: 1px solid #ccc;
+  color: #666; /* 按钮文字变浅 */
+  border: 1px solid #ddd; /* 按钮边框变浅 */
   border-radius: 3px;
   text-decoration: none !important;
   transition: all 0.2s;
   background-color: #fff;
 }
-.pub-btn:hover { background-color: #333; color: #fff; border-color: #333; }
+.pub-btn:hover { background-color: #555; color: #fff; border-color: #555; }
 
 /* 移动端适配 */
 @media (max-width: 768px) {
@@ -324,7 +325,7 @@
     <div class="year-label">2026</div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2026_drawmark.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2026_drawmark.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">DrawMark: Defeating Regeneration Attacks by Embedding Watermark into Predicted Noise of Diffusion Models</div>
         <div class="pub-authors">Z Cao, <strong>X Liao*</strong>, Y Wu, J Wang, X Wu</div>
@@ -334,7 +335,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2026_cjc.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2026_cjc.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Self-Synchronization mechanism Based Screen-Shooting Resilient Watermarking</div>
         <div class="pub-authors">Y Yao, <strong>X Liao*</strong>, B Ou, F Hu, Z Qin</div>
@@ -344,7 +345,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2026_sim.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2026_sim.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Sim-to-Real: An Unsupervised Noise Layer for Screen-Camera Watermarking Robustness</div>
         <div class="pub-authors">Y Wu, <strong>X Liao*</strong>, B Wang, H Fang, X Wu, M Chen, G Wang</div>
@@ -360,7 +361,7 @@
     <div class="year-label">2025</div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2025_ins.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2025_ins.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Versatile and Harmless Deepfake Proactive Forensics via Conditional Watermarking</div>
         <div class="pub-authors">X Wu, <strong>X Liao*</strong>, J Zhang, M Chen, Y Wu, J Guo</div>
@@ -370,7 +371,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2025_acm.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2025_acm.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Color Image Steganography Using Generative Adversarial Networks with a Phased Training Strategy</div>
         <div class="pub-authors">S Zhou, M Ye, W Luo, <strong>X Liao</strong>, K Wei</div>
@@ -382,7 +383,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2025_tomm_video.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2025_tomm_video.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Video Frame Interpolation via Fast Bidirectional 3D Correlation Volume</div>
         <div class="pub-authors">D Zhang, R Lou, J Chen, X Ding, <strong>X Liao</strong>, G Yang</div>
@@ -394,7 +395,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2025_tcsvt.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2025_tcsvt.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Flexible Partial Screen-shooting Watermarking with Provable Robustness</div>
         <div class="pub-authors">M Chen, <strong>X Liao*</strong>, H Fang, J Guo, Y Chen, X Wu</div>
@@ -406,7 +407,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2025_chongqing.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2025_chongqing.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Compressed deepfake video detection method based on inconsistent facial motion</div>
         <div class="pub-authors">Y Wang, J Hu, X Wu, J Xiao, Y Chen, <strong>X Liao*</strong></div>
@@ -418,7 +419,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2025_book.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2025_book.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Data security</div>
         <div class="pub-authors">Z Qin, J Shen, H Deng, L Ou, W Jin, Y Hu, <strong>X Liao</strong></div>
@@ -430,7 +431,7 @@
     </div>
     
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2025_tmm.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2025_tmm.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Efficient hierarchical feature collaboration transformer for image inpainting</div>
         <div class="pub-authors">D Zhang, N Fu, <strong>X Liao*</strong>, J Chen, H Yang, G Yang</div>
@@ -442,7 +443,7 @@
     </div>
     
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2025_tomm_prest.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2025_tomm_prest.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">PRest-Net: multi-domain probability estimation network for robust image forgery detection</div>
         <div class="pub-authors">J Chen, <strong>X Liao*</strong>, Z Qian, Z Qin</div>
@@ -458,7 +459,7 @@
     <div class="year-label">2024</div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2024_book.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2024_book.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Digital image forensics</div>
         <div class="pub-authors"><strong>X Liao</strong>, T Qiao, L Dong, Y Chen, J Chen, Z Qin</div>
@@ -470,7 +471,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2024_csur.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2024_csur.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Deepfake detection: a comprehensive survey from the reliability perspective</div>
         <div class="pub-authors">T Wang, <strong>X Liao*</strong>, K Chow, X Lin, Y Wang</div>
@@ -482,7 +483,7 @@
     </div>
     
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2024_tdsc.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2024_tdsc.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">ADA-FInfer: inferring face representations from adaptive select frames for high-visual-quality Deepfake detection</div>
         <div class="pub-authors">J Hu, J Liang, Z Qin*, <strong>X Liao*</strong>, W Zhou, X Lin</div>
@@ -494,7 +495,7 @@
     </div>
 
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_tifs.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_tifs.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Dual defense: adversarial, traceable, and invisible robust watermarking against face swapping</div>
           <div class="pub-authors">Y Zhang, D Ye, C Xie, L Tang, <strong>X Liao</strong>, Z Liu, C Chen, J Deng</div>
@@ -506,7 +507,7 @@
     </div>
 
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_ijcai_bugs.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_ijcai_bugs.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Are watermarks bugs for Deepfake detectors? Rethinking proactive forensics</div>
           <div class="pub-authors">X Wu, <strong>X Liao*</strong>, B Ou, Y Liu, Z Qin</div>
@@ -518,7 +519,7 @@
     </div>
 
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_ijcai_delocate.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_ijcai_delocate.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Delocate: detection and localization for Deepfake videos with randomly-located tampered traces</div>
           <div class="pub-authors">J Hu, <strong>X Liao*</strong>, D Gao, Satoshi, Q Wang, Z Qin, Mike Shou</div>
@@ -530,7 +531,7 @@
     </div>
 
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_acm_safe.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_acm_safe.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">SafePaint: anti-forensic image inpainting with domain adaptation</div>
           <div class="pub-authors">D Chen, <strong>X Liao*</strong>, X Wu, S Chen</div>
@@ -542,7 +543,7 @@
     </div>
 
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_ijcv.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_ijcv.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Anti-fake vaccine: safeguarding privacy against face swapping via visual-semantic dual degradation</div>
           <div class="pub-authors">J Li, C Luo, H Zhang, Y Cao, <strong>X Liao</strong>, X Cao</div>
@@ -554,7 +555,7 @@
     </div>
     
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_tmm_screen.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_tmm_screen.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Screen-shooting resistant watermarking with grayscale deviation simulation</div>
           <div class="pub-authors">Y Li, <strong>X Liao*</strong>, X Wu</div>
@@ -566,7 +567,7 @@
     </div>
 
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_tnsm.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_tnsm.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Amount-based covert communication over blockchain</div>
           <div class="pub-authors">Y Tian, <strong>X Liao</strong>, L Dong, Y Xu, H Jiang</div>
@@ -578,7 +579,7 @@
     </div>
     
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_tcsvt_wave.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_tcsvt_wave.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">WaveRecovery: screen-shooting watermarking based on wavelet and recovery</div>
           <div class="pub-authors">L Fu, <strong>X Liao*</strong>, J Guo, L Dong, Z Qin</div>
@@ -590,7 +591,7 @@
     </div>
     
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_tcsvt_face.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_tcsvt_face.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Face forgery detection via multi-feature fusion and local enhancement</div>
           <div class="pub-authors">D Zhang, J Chen, <strong>X Liao*</strong>, F Li, J Chen, G Yang</div>
@@ -602,7 +603,7 @@
     </div>
 
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_tomm_vocoder.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_tomm_vocoder.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Vocoder detection of spoofing speech based on GAN fingerprints and domain generalization</div>
           <div class="pub-authors">F Li, Y Chen, H Liu, Z Zhao, Y Yao, <strong>X Liao</strong></div>
@@ -614,7 +615,7 @@
     </div>
 
      <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_tomm_spatio.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_tomm_spatio.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Spatiotemporal inconsistency learning and interactive fusion for Deepfake video detection</div>
           <div class="pub-authors">D Zhang, W Zhu, <strong>X Liao*</strong>, F Qi, G Yang, X Ding</div>
@@ -626,7 +627,7 @@
     </div>
 
     <div class="pub-item">
-        <div class="pub-img"><img src="/images/pubs/2024_tai_face.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+        <div class="pub-img"><img src="/images/pubs/2024_tai_face.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
         <div class="pub-content">
           <div class="pub-title">Face forgery detection based on fine-grained clues and noise inconsistency</div>
           <div class="pub-authors">D Zhang, R He, <strong>X Liao*</strong>, F Li, J Chen, G Yang</div>
@@ -642,7 +643,7 @@
     <div class="year-label">2023</div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2023_acm_sepmark.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2023_acm_sepmark.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">SepMark: deep separable watermarking for unified source tracing and Deepfake detection</div>
         <div class="pub-authors">X Wu, <strong>X Liao*</strong>, B Ou</div>
@@ -654,7 +655,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2023_acm_dct.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2023_acm_dct.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Exploiting fine-grained DCT representations for hiding image-level messages within JPEG images</div>
         <div class="pub-authors">J Yang, <strong>X Liao*</strong></div>
@@ -666,7 +667,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2023_acm_video.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2023_acm_video.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">A novel deep video watermarking framework with enhanced robustness to H.264/AVC compression</div>
         <div class="pub-authors">Y Zhang, J Ni, W Su, <strong>X Liao</strong></div>
@@ -678,7 +679,7 @@
     </div>
     
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2023_tcsvt_famm.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2023_tcsvt_famm.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">FAMM: facial muscle motions for detecting compressed Deepfake videos over social networks</div>
         <div class="pub-authors"><strong>X Liao*</strong>, Y Wang, T Wang, J Hu, X Wu</div>
@@ -690,7 +691,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2023_tmm_dehazing.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2023_tmm_dehazing.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Image dehazing assessment: a real-world dataset and a haze density-aware criteria</div>
         <div class="pub-authors">J Chen, G Yang, S Wang, D Wang, <strong>X Liao</strong></div>
@@ -706,7 +707,7 @@
     <div class="year-label">2022</div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2022_aaai.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2022_aaai.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">FInfer: frame inference-based Deepfake detection for high-visual-quality videos</div>
         <div class="pub-authors">J Hu, <strong>X Liao*</strong>, J Liang, W Zhou, Z Qin</div>
@@ -718,7 +719,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2022_tifs.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2022_tifs.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">PulseEdit: editing physiological signal in facial videos for privacy protection</div>
         <div class="pub-authors">M Chen, <strong>X Liao</strong>, M Wu*</div>
@@ -734,7 +735,7 @@
     <div class="year-label">2021</div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2021_jos.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2021_jos.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Spatial steganalysis of low embedding rate based on convolutional neural network</div>
         <div class="pub-authors">J Shen, <strong>X Liao*</strong>, Z Qin, X Liu</div>
@@ -746,7 +747,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2021_tcsvt.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2021_tcsvt.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Detecting compressed Deepfake video in social networks using frame-temporality two-stream convolutional network</div>
         <div class="pub-authors">J Hu, <strong>X Liao*</strong>, W Wang, Z Qin</div>
@@ -762,7 +763,7 @@
     <div class="year-label">2020</div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2020_tdsc.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2020_tdsc.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Adaptive payload distribution in multiple images steganography based on image texture features</div>
         <div class="pub-authors"><strong>X Liao*</strong>, J Yin, M Chen, Z Qin</div>
@@ -774,7 +775,7 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-img"><img src="/images/pubs/2020_jstsp.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/999?text=Image'"></div>
+      <div class="pub-img"><img src="/images/pubs/2020_jstsp.jpg" alt="Paper" onerror="this.src='https://via.placeholder.com/320x180/eee/aaa?text=Image'"></div>
       <div class="pub-content">
         <div class="pub-title">Robust detection of image operator chain with two-stream convolutional neural network</div>
         <div class="pub-authors"><strong>X Liao*</strong>, K Li, X Zhu, K. J. R Liu</div>
