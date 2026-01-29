@@ -219,27 +219,25 @@
   margin-top: 40px;
 }
 
-/* 年份区块 (修改点：线条变细、颜色变浅) */
+/* 年份区块 */
 .year-section {
   position: relative;
   padding: 30px 0 10px 0;
-  /* 上横线：由 3px 黑色 改为 1.5px 浅灰色 */
-  border-top: 1.5px solid #d0d0d0; 
-  /* 下横线：由 1px 灰色 改为 1px 更浅的灰色 */
-  border-bottom: 1px solid #eaeaea; 
+  border-top: 1.5px solid #d0d0d0; /* 年份上横线 (浅灰) */
+  border-bottom: 1px solid #eaeaea; /* 年份下横线 (更浅灰) */
 }
 
-/* 右上角年份标签 (修改点：颜色变浅) */
+/* 右上角年份标签 */
 .year-label {
   position: absolute;
-  top: -16px; /* 稍微调整位置以适应细线 */
+  top: -16px;
   right: 0;
   background-color: #fff;
   padding: 0 0 0 15px;
   font-family: 'Noto Serif SC', serif;
   font-size: 24px;
-  font-weight: 700; /* 稍微减小字重，看起来不那么黑 */
-  color: #a0a0a0;   /* 字体颜色改为浅灰色 */
+  font-weight: 700;
+  color: #a0a0a0;
   line-height: 1;
 }
 
@@ -249,11 +247,7 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 25px 0;
-  border-bottom: 1px dashed #f0f0f0; /* 论文间的分隔线也调得更浅 */
-}
-
-.pub-item:last-child {
-  border-bottom: none;
+  /* border-bottom: none;  <-- 已移除论文之间的分隔线 */
 }
 
 /* 左侧缩略图 */
@@ -267,7 +261,7 @@
 .pub-img img {
   width: 100%;
   border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 阴影也调淡一点 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
   display: block;
 }
@@ -278,38 +272,43 @@
 .pub-title { 
   font-size: 17px; 
   font-weight: 700; 
-  color: #444; /* 标题稍微淡一点的黑，不刺眼 */
+  color: #444;
   margin-bottom: 8px; 
   line-height: 1.5;
 }
 .pub-authors { 
   font-size: 15px; 
-  color: #666; /* 作者颜色 */
+  color: #666; 
   margin-bottom: 6px; 
   line-height: 1.5;
 }
 .pub-venue { 
   font-size: 14px; 
-  color: #999; /* 期刊信息颜色变浅 */
+  color: #999; 
   font-style: italic; 
   margin-bottom: 10px; 
 }
 
 /* 按钮组 */
 .pub-links { display: flex; gap: 8px; flex-wrap: wrap;}
+
+/* 按钮样式 (重点修改) */
 .pub-btn {
   display: inline-flex;
   align-items: center;
   padding: 3px 10px;
   font-size: 12px;
-  color: #666; /* 按钮文字变浅 */
-  border: 1px solid #ddd; /* 按钮边框变浅 */
+  color: #666; 
+  
+  /* 添加 !important 以强制覆盖主题默认的链接样式，解决下边框消失问题 */
+  border: 1px solid #ddd !important; 
+  
   border-radius: 3px;
   text-decoration: none !important;
   transition: all 0.2s;
   background-color: #fff;
 }
-.pub-btn:hover { background-color: #555; color: #fff; border-color: #555; }
+.pub-btn:hover { background-color: #555; color: #fff; border-color: #555 !important; }
 
 /* 移动端适配 */
 @media (max-width: 768px) {
